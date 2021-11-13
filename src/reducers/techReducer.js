@@ -1,5 +1,7 @@
 import {
-    GET_TECHS
+    GET_TECHS,
+    DELETE_TECH,
+    ADD_TECH
 } from '../actions/types'
 
 const initState = {
@@ -16,9 +18,22 @@ const techReducer = (state = initState, action) => {
                 techs: action.payload,
                 loading: false
             }
+
+        case DELETE_TECH:
+            return {
+                ...state,
+                techs: state.techs.filter(tech => tech.id !== action.payload)
+            }
+        case ADD_TECH:
+            return {
+                ...state,
+                techs: [...state.techs, action.payload]
+            }
         default:
             return state
     }
+
+
 }
 
 

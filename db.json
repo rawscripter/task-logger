@@ -2,24 +2,14 @@
   "logs": [],
   "techs": [
     {
-      "id": 1,
       "firstName": "Shuvo",
-      "lastName": "Hossain"
+      "lastName": "Goswami",
+      "id": 1
     },
     {
-      "id": 2,
-      "firstName": "Goswami",
-      "lastName": "Sarker"
-    },
-    {
-      "id": 3,
-      "firstName": "Raw",
-      "lastName": "Hossain"
-    },
-    {
-      "firstName": "hello",
-      "lastName": "world",
-      "id": 4
+      "firstName": "Rawss",
+      "lastName": "Goswami",
+      "id": 2
     }
   ]
 }

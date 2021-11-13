@@ -33,7 +33,7 @@ const EditLogModal = () => {
                     </div>
                     <div className="input-field">
                         <select name="tech" value={tech} className="browser-default" onChange={e => setTech(e.target.value)}>
-                            <option value="" disabled>Select Technician</option>
+                            <option value="" disabled>Select Developer</option>
                             <option value="John Doe">John Doe</option>
                             <option value="Jane Doe">Jane Doe</option>
                         </select>

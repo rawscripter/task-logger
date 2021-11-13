@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import M from 'materialize-css/dist/js/materialize.min.js';
-
-const AddTechModal = () => {
+import { addTech } from '../../actions/techActions';
+import { connect } from 'react-redux';
+const AddTechModal = ({ addTech }) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
 
@@ -9,9 +10,10 @@ const AddTechModal = () => {
         if (firstName === '' || lastName === '') {
             M.toast({ html: 'Please enter a first and last name' });
         } else {
-            console.log(firstName, lastName);
+            addTech({ firstName, lastName });
+            M.toast({ html: `${firstName} ${lastName} was added as a tech` });
+
         }
-        // Clear Fields
         // Clear Fields
         setFirstName('');
         setLastName('');
@@ -19,16 +21,14 @@ const AddTechModal = () => {
     }
     return (
         <div id="add-tech-modal" className="modal  modal-fixed-footer" style={modalStyle}>
-
             <div className="modal-content">
                 <div className="center-align" style={modalHeader}>
                     <h5 >Add New Tech</h5>
                 </div>
-
                 <div className="row">
                     <div className="input-field">
                         <input type="text" name="firstName" value={firstName} onChange={e => setFirstName(e.target.value)} />
-                        <label htmlFor="setFirstName" className="active">First Name</label>
+                        <label htmlFor="setFirstName">First Name</label>
                     </div>
                     <div className="input-field">
                         <input type="text" name="lastName" value={lastName} onChange={e => setLastName(e.target.value)} />
@@ -36,8 +36,6 @@ const AddTechModal = () => {
                     </div>
                 </div>
             </div>
-
-
             <div className="modal-footer center-align">
                 <a href="#!" onClick={onSubmit} className="modal-close waves-effect waves-blue blue btn">Add Tech</a>
             </div>
@@ -53,4 +51,4 @@ const modalStyle = {
 const modalHeader = {
     marginBottom: '20px',
 }
-export default AddTechModal;
+export default connect(null, { addTech })(AddTechModal);
