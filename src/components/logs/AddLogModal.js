@@ -1,16 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import M from 'materialize-css/dist/js/materialize.min.js';
+import { connect } from 'react-redux';
+import { addLog } from '../../actions/logActions';
+import { getTechs } from '../../actions/techActions';
+const AddLogModal = ({ log, tech: { techs }, addLog, getTechs }) => {
 
-const AddLogModal = () => {
     const [message, setMessage] = useState('');
     const [attention, setAttention] = useState(false);
     const [tech, setTech] = useState('');
+
+    // fetch techs
+    useEffect(() => {
+        getTechs();
+        // eslint-disable-next-line
+    }, []);
+
 
     const onSubmit = () => {
         if (message === '' || tech === '') {
             M.toast({ html: 'Please enter a message and tech' });
         } else {
-            console.log(message, attention, tech);
+            addLog({ message, attention, tech });
+            M.toast({ html: `Log added by ${tech}` });
         }
         // Clear Fields
         // Clear Fields
@@ -34,8 +45,9 @@ const AddLogModal = () => {
                     <div className="input-field">
                         <select name="tech" value={tech} className="browser-default" onChange={e => setTech(e.target.value)}>
                             <option value="" disabled>Select Technician</option>
-                            <option value="John Doe">John Doe</option>
-                            <option value="Jane Doe">Jane Doe</option>
+                            {techs && techs.map(tech => (
+                                <option key={tech.id} value={tech.firstName}>{tech.firstName} {tech.lastName}</option>
+                            ))}
                         </select>
                     </div>
                     <div className="input-field">
@@ -51,8 +63,8 @@ const AddLogModal = () => {
             </div>
 
 
-            <div class="modal-footer center-align">
-                <a href="#!" onClick={onSubmit} class="modal-close waves-effect waves-blue blue btn">Add To List</a>
+            <div className="modal-footer center-align">
+                <a href="#!" onClick={onSubmit} className="modal-close waves-effect waves-blue blue btn">Add To List</a>
             </div>
         </div>
     );
@@ -66,4 +78,12 @@ const modalStyle = {
 const modalHeader = {
     marginBottom: '20px',
 }
-export default AddLogModal;
+
+const mapStateToProps = state => ({
+    log: state.log,
+    tech: state.tech
+});
+
+export default connect(mapStateToProps, {
+    addLog, getTechs
+})(AddLogModal);

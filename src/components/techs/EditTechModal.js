@@ -38,8 +38,8 @@ const EditTechModal = () => {
             </div>
 
 
-            <div class="modal-footer center-align">
-                <a href="#!" onClick={onSubmit} class="modal-close waves-effect waves-blue blue btn">Update</a>
+            <div className="modal-footer center-align">
+                <a href="#!" onClick={onSubmit} className="modal-close waves-effect waves-blue blue btn">Update</a>
             </div>
         </div>
     );

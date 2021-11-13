@@ -38,8 +38,8 @@ const AddTechModal = () => {
             </div>
 
 
-            <div class="modal-footer center-align">
-                <a href="#!" onClick={onSubmit} class="modal-close waves-effect waves-blue blue btn">Add Tech</a>
+            <div className="modal-footer center-align">
+                <a href="#!" onClick={onSubmit} className="modal-close waves-effect waves-blue blue btn">Add Tech</a>
             </div>
         </div>
     );
