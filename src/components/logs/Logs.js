@@ -24,7 +24,7 @@ const Logs = (props) => {
             {!loading && logs.length > 0 ? (
                 <ul className="collection with-header">
                     <li className="collection-header">
-                        <h5 className="text-h3 m-0 p-2">System Logs</h5>
+                        <h5 className="text-h3 m-0 p-2 center-align">System Logs</h5>
                     </li>
                     {logs.map(log => (
                         <LogItem log={log} key={log.id} />
