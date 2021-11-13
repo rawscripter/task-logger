@@ -19,7 +19,7 @@ const EditLogModal = () => {
         setTech('');
     }
     return (
-        <div id="edit-log-modal" className="modal  modal-fixed-footer" style={modalStyle}>
+        <div id="edit-log-modal" className="modal  modal-fixed-footer">
 
             <div className="modal-content">
                 <div className="center-align" style={modalHeader}>
@@ -58,10 +58,7 @@ const EditLogModal = () => {
     );
 }
 
-const modalStyle = {
-    width: '500px',
-    height: '50%',
-}
+
 
 const modalHeader = {
     marginBottom: '20px',

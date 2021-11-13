@@ -16,16 +16,20 @@ const Logs = ({ log: { logs, loading }, getLogs }) => {
 
     return (
         <div className="logs">
-            {!loading && logs.length > 0 ? (
-                <ul className="collection with-header">
-                    <li className="collection-header">
-                        <h5 className="text-h3 m-0 p-2 center-align">System Logs</h5>
-                    </li>
-                    {logs.map(log => (
+
+            <ul className="collection with-header">
+                <li className="collection-header">
+                    <h5 className="text-h3 m-0 p-2 center-align">System Logs</h5>
+                </li>
+                {!loading && logs.length > 0 ? (
+                    logs.map(log => (
                         <LogItem log={log} key={log.id} />
-                    ))}
-                </ul>
-            ) : null}
+                    ))
+                ) : (
+                    <p className="center-align">No logs to show</p>
+                )}
+            </ul>
+
         </div>
     );
 }

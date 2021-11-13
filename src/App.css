@@ -9,3 +9,44 @@ margin: 0;
 .p-2{
     padding: 10px;
 }
+
+#add-log-modal{
+    width: 500px;
+    height: auto;
+
+}
+
+#edit-log-modal{
+    width: 500px;
+    height: 400px;
+}
+
+#add-tech-modal{
+    width: 500px;
+    height: 400px;
+}
+#edit-tech-modal{
+    width: 500px;
+    height: 400px;
+}
+
+/* css for mobile */
+
+
+@media only screen and (max-width: 600px) {
+    #add-log-modal{
+        width: 90% !important;
+     }
+     #edit-log-modal{
+        width: 90% !important;
+     }
+     #tech-list-modal{
+        width: 90% !important;
+     }
+     #add-tech-modal{
+        width: 90% !important;
+     }
+     #edit-tech-modal{
+        width: 90% !important;
+     }
+}

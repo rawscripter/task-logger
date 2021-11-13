@@ -20,7 +20,7 @@ const AddTechModal = ({ addTech }) => {
 
     }
     return (
-        <div id="add-tech-modal" className="modal  modal-fixed-footer" style={modalStyle}>
+        <div id="add-tech-modal" className="modal  modal-fixed-footer">
             <div className="modal-content">
                 <div className="center-align" style={modalHeader}>
                     <h5 >Add New Tech</h5>
@@ -41,11 +41,6 @@ const AddTechModal = ({ addTech }) => {
             </div>
         </div>
     );
-}
-
-const modalStyle = {
-    width: '500px',
-    height: '50%',
 }
 
 const modalHeader = {

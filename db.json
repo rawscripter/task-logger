@@ -1,5 +1,18 @@
 {
-  "logs": [],
+  "logs": [
+    {
+      "message": "Hello world",
+      "attention": true,
+      "tech": "Shuvo",
+      "id": 1
+    },
+    {
+      "message": "Hello world",
+      "attention": false,
+      "tech": "Shuvo",
+      "id": 2
+    }
+  ],
   "techs": [
     {
       "firstName": "Shuvo",
