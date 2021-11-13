@@ -10,6 +10,9 @@ import EditLogModal from './components/logs/EditLogModal';
 import AddTechModal from './components/techs/AddTechModal';
 import TechListModal from './components/techs/TechListModal';
 import EditTechModal from './components/techs/EditTechModal';
+import store from './store'
+import { Provider } from 'react-redux'
+
 const App = () => {
   // init materialize js
   useEffect(() => {
@@ -17,18 +20,20 @@ const App = () => {
   }, [])
 
   return (
-    <div className="App">
-      <SearchBar />
-      <div className="container">
-        <AddBtn />
-        <AddLogModal />
-        <AddTechModal />
-        <EditLogModal />
-        <TechListModal />
-        <EditTechModal />
-        <Logs />
-      </div>
-    </div >
+    <Provider store={store}>
+      <div className="App">
+        <SearchBar />
+        <div className="container">
+          <AddBtn />
+          <AddLogModal />
+          <AddTechModal />
+          <EditLogModal />
+          <TechListModal />
+          <EditTechModal />
+          <Logs />
+        </div>
+      </div >
+    </Provider>
   );
 }
 
