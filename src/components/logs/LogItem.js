@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
-import { deleteLog } from '../../actions/logActions';
+import { deleteLog, setCurrent } from '../../actions/logActions';
 import M from 'materialize-css/dist/js/materialize.min.js';
 const { connect } = require('react-redux');
-const LogItem = ({ log, deleteLog }) => {
+const LogItem = ({ log, deleteLog, setCurrent }) => {
     const { id, message, date, tech, attention } = log;
     const onDelete = () => {
         deleteLog(id);
@@ -15,12 +15,12 @@ const LogItem = ({ log, deleteLog }) => {
         <li className="collection-item">
             <div style={collectionStyle}>
                 <div >
-                    <a href="#edit-log-modal" className={`modal-trigger ${attention ? 'red-text' : 'blue-text'}`} >
-                        {message}
+                    <a onClick={() => setCurrent(log)} href="#edit-log-modal" className={`modal-trigger ${attention ? 'red-text' : 'blue-text'}`} >
+                        <p className="task_name">{message}</p>
                     </a>
 
                     <div className="grey-text">
-                        <span className="black-text">ID #{id}</span> last updated by <span className="black-text">{tech}</span> on <Moment format="MMMM Do YYYY, h:mm:ss a">{date}</Moment>
+                        <span className="black-text">ID #{id}</span> assigned to <span className="black-text">{tech}</span> on <Moment format="MMMM Do YYYY, h:mm:ss a">{date}</Moment>
                     </div>
                 </div>
                 <a onClick={onDelete} href="#!" className="secondary-content">
@@ -41,5 +41,6 @@ LogItem.propTypes = {
 }
 
 export default connect(null, {
-    deleteLog
+    deleteLog,
+    setCurrent
 })(LogItem);

@@ -1,28 +1,4 @@
 {
-  "logs": [
-    {
-      "message": "Hello world",
-      "attention": true,
-      "tech": "Shuvo",
-      "id": 1
-    },
-    {
-      "message": "Hello world",
-      "attention": false,
-      "tech": "Shuvo",
-      "id": 2
-    }
-  ],
-  "techs": [
-    {
-      "firstName": "Shuvo",
-      "lastName": "Goswami",
-      "id": 1
-    },
-    {
-      "firstName": "Rawss",
-      "lastName": "Goswami",
-      "id": 2
-    }
-  ]
+  "logs": [],
+  "techs": []
 }

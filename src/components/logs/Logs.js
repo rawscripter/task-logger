@@ -19,7 +19,7 @@ const Logs = ({ log: { logs, loading }, getLogs }) => {
 
             <ul className="collection with-header">
                 <li className="collection-header">
-                    <h5 className="text-h3 m-0 p-2 center-align">System Logs</h5>
+                    <h5 className="text-h3 m-0 p-2 center-align">Pending Tasks</h5>
                 </li>
                 {!loading && logs.length > 0 ? (
                     logs.map(log => (
