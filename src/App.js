@@ -13,6 +13,7 @@ import EditTechModal from './components/techs/EditTechModal';
 import store from './store'
 import { Provider } from 'react-redux'
 // a
+// b
 const App = () => {
   // init materialize js
   useEffect(() => {
