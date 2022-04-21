@@ -14,6 +14,7 @@ import store from './store'
 import { Provider } from 'react-redux'
 // a
 // b
+// c
 const App = () => {
   // init materialize js
   useEffect(() => {
