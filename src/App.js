@@ -12,7 +12,7 @@ import TechListModal from './components/techs/TechListModal';
 import EditTechModal from './components/techs/EditTechModal';
 import store from './store'
 import { Provider } from 'react-redux'
-
+// a
 const App = () => {
   // init materialize js
   useEffect(() => {
